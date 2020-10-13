@@ -1,0 +1,96 @@
+Kotlin
+和java一样是运行在jvm上，编译之后生成的和java一样是.class文件
+函数是第一公民，java是对象
+具有大量的语法糖，(代码更简洁流畅，代码更语义自然,易读少出错)
+
+"""三引号代表Raw string，即三引号内所有内容均为string，即使有需要转义的字符，也不用特殊处理
+
+延迟初始化
+成员变量的值被严格区分可空和非可空，其中非可空的变量值，
+要么在声明的时候进行初始化，要么通过延迟加载的方式进行初始化，
+一般来说，有两种方式来进行延迟加载。
+
+首次使用到的时候才去实例化  修饰val的变量
+by lazy{   }
+自己控制变量的初始化 修饰var的变量，且变量是非空的类型
+lateinit var *******
+
+data class 关键字 data声明一个数据类型，自动生成set,get,equals,toString
+
+object : 定义一个类并创建该类的一个实例。还可以代替匿名内部类。
+
+viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+    override fun onPageScrollStateChanged(state: Int) {}
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+
+    override fun onPageSelected(position: Int) {}
+});
+
+伴生对象
+companion object: kotlin没有静态函数，用这个代替static的修饰
+
+扩展函数 装饰模式
+
+对于扩展函数来说，转化为Java代码的时候，生成一个静态的函数，
+这个静态函数的第一个参数就是该类的实例对象，所以这样把类的实例传入函数以后，函数内部就可以访问到类的公有方法。
+
+扩展属性
+
+扩展属性也是类似，获取的扩展属性会生成为一个静态的get函数，同时这个静态函数的第一个参数就是该类的实例对象，
+设置的扩展属性会转化为一个静态的set函数，同时这个静态函数的第一个参数就是该类的实例对象。函数内部可以访问公有的方法和属性。
+
+
+在了解了其实现原理后，可以发现，拓展函数一定是static的，且不能被override(重写)，也不存在运行时类型
+，其类型在编译时就已经确定，同时扩展函数和扩展属性内只能访问到类的公有方法和属性，私有的和protected同样是不能访问的
+
+扩展属性。这个属性并不会保存在对象里，所以我们使用它时需要实现 「getter」 函数，
+如果是可变对象，则还要实现 「setter」 函数。
+格式如下：
+
+const val 可见性为public final static，可以直接访问。
+val 可见性为private final static，并且val 会生成方法getNormalObject()，通过方法调用访问
+
+val 类名.属性名: 类型
+    get() {
+        方法体
+    }
+
+var 可变对象。。。。
+var 类名.属性名: 类型
+    get() {
+        方法体
+    }
+    set(value) {
+        方法体
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
