@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
     </androidx.recyclerview.widget.RecyclerView>
 
