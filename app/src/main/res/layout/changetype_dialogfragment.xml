@@ -42,7 +42,7 @@
             android:visibility="invisible" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,6 +50,6 @@
         android:background="@color/white"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

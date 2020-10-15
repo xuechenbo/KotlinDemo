@@ -3,8 +3,8 @@ package com.monebac.com.base
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
 import android.view.KeyEvent
+import androidx.fragment.app.FragmentActivity
 import com.monebac.com.R
 import com.monebac.com.utils.DialogPress
 import com.monebac.com.utils.PreferencesUtil

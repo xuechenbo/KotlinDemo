@@ -2,12 +2,12 @@ package com.monebac.com.wkyk.dialogfrg
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
 import android.util.DisplayMetrics
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.haibin.calendarview.Calendar
 import com.haibin.calendarview.CalendarView
 import com.monebac.com.R
@@ -47,8 +47,8 @@ class CalendarDialogFrg : DialogFragment() {
 
 
     private fun initData() {
-        dialog.setCanceledOnTouchOutside(false)
-        val window = dialog.window
+        dialog!!.setCanceledOnTouchOutside(false)
+        val window = dialog!!.window
         window!!.setGravity(Gravity.BOTTOM)
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
@@ -59,7 +59,7 @@ class CalendarDialogFrg : DialogFragment() {
 
             tv_month_day.text = "${calendarView.curMonth}月${calendarView.curDay}日"
 
-            tv_close.setOnClickListener { dialog.dismiss() }
+            tv_close.setOnClickListener { dialog!!.dismiss() }
             tv_save.setOnClickListener {
                 var mList = calendarView.multiSelectCalendars
                 //TODO 1
@@ -75,7 +75,7 @@ class CalendarDialogFrg : DialogFragment() {
                     it.timeInMillis.toYMD()
                 })
 
-                dialog.dismiss()
+                dialog!!.dismiss()
             }
 
             calendarView.run {

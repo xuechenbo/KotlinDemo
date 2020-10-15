@@ -1,15 +1,15 @@
 package com.monebac.com.wkyk.dialogfrg
 
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
 import android.util.DisplayMetrics
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.monebac.com.R
 import com.monebac.com.wkyk.adapter.ChangeTypeAdapter
-import kotlinx.android.synthetic.main.changetype_dialogfragment.view.*
+import kotlinx.android.synthetic.main.changetype_dialogfragment.*
 import java.io.Serializable
 
 class ChangeTypeDialog : DialogFragment() {
@@ -58,28 +58,28 @@ class ChangeTypeDialog : DialogFragment() {
     }
 
     private fun initData(view: View) {
-        dialog.setCanceledOnTouchOutside(false)
-        val window = dialog.window
+        dialog!!.setCanceledOnTouchOutside(false)
+        val window = dialog!!.window
         window!!.setGravity(Gravity.BOTTOM)
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
         view.run {
             iv_close.setOnClickListener {
                 //myListener?.invoke(selectItem)
-                dialog.dismiss()
+                dialog!!.dismiss()
             }
             tv_success.setOnClickListener {
                 mListener?.invoke(selectItem)
-                dialog.dismiss()
+                dialog!!.dismiss()
             }
             myAdapter = ChangeTypeAdapter(R.layout.item_change_dialog_fragment, mList)
-            recyclerView.adapter = myAdapter
+//            recyclerView.adapter = myAdapter
         }
 
         myAdapter.setOnItemClickListener { adapter, view, position ->
             selectItem = "${position + 2}"
             mListener?.invoke(selectItem)
-            dialog.dismiss()
+            dialog!!.dismiss()
         }
 
     }

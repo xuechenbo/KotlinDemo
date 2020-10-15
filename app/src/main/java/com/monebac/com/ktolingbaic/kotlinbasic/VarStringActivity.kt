@@ -1,17 +1,16 @@
 package com.monebac.com.ktolingbaic.kotlinbasic
 
 import android.os.Build
-import android.support.annotation.RequiresApi
+import androidx.annotation.RequiresApi
 import com.monebac.com.R
 import com.monebac.com.base.BaseActivity
 import com.monebac.com.ktolingbaic.kotlinbasic.model.ColorModel
 import com.monebac.com.utils.LogsUtils
 import com.monebac.com.utils.toYMD
-import kotlinx.android.synthetic.main.activity_var_string.*
+import kotlinx.android.synthetic.main.activity_function.*
 import kotlinx.android.synthetic.main.layout_title.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class VarStringActivity : BaseActivity() {
 

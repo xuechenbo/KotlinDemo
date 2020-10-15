@@ -2,9 +2,9 @@ package com.monebac.com.ktolingbaic.kotlinbasic
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.OrientationHelper
 import android.widget.Button
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.OrientationHelper
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.monebac.com.R

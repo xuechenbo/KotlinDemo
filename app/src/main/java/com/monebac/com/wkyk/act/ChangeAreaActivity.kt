@@ -1,8 +1,8 @@
 package com.monebac.com.wkyk.act
 
 import android.content.Intent
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.OrientationHelper
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.OrientationHelper
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.lzy.okgo.model.Response
@@ -14,6 +14,8 @@ import com.monebac.com.wkyk.netutils.BaseEntity
 import com.monebac.com.wkyk.netutils.OkClient
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import kotlinx.android.synthetic.main.act_change_area.*
+import kotlinx.android.synthetic.main.dialog_calendar.*
+import kotlinx.android.synthetic.main.dialog_calendar.tv_title
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.toast
 import java.io.Serializable
