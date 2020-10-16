@@ -12,6 +12,7 @@ class LifecyActivity : BaseActivity(), LifecycleOwner {
     }
 
     override fun initData() {
+        //??
         lifecycle.addObserver(object : TestLifeCycle() {})
     }
 
