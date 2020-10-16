@@ -42,6 +42,7 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
 
     //TODO 匿名函数
     val initListener = fun() {
+
         other.setOnClickListener {
             //多条目布局
             startActivity<PayRecordListActivity>()

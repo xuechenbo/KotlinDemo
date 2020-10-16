@@ -2,6 +2,7 @@ package com.monebac.com.wkyk.act
 
 import com.monebac.com.R
 import com.monebac.com.base.BaseMvpActivity
+import com.monebac.com.jetpack.MainJetpackActivity
 import com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity
 import com.monebac.com.utils.LogsUtils
 import com.monebac.com.utils.PreferencesUtil
@@ -72,6 +73,11 @@ class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), Log
 
         tv_forget_pass.setOnClickListener {
             startActivity<AgentWebActivity>("title" to "忘记密码", "url" to "https://www.zhihu.com")
+        }
+
+        tv_jetpack.setOnClickListener {
+            startActivity<MainJetpackActivity>()
+            finish()
         }
     }
 

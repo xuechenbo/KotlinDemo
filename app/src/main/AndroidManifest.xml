@@ -11,53 +11,56 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
-        android:name="com.monebac.com.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/main_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:label"
-        >
+        tools:replace="android:label">
 
         <!-- Kotlin用法 -->
 
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.VarStringActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.FunctionActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.KotlinClassActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.AnkoActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.MaterialDesignActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.ListFilterActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.VarStringActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.FunctionActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.KotlinActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.KotlinClassActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.AnkoActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.MaterialDesignActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.ListFilterActivity" />
         <activity
-            android:name="com.monebac.com.ktolingbaic.kotlinbasic.ScrollingActivity"
+            android:name=".ktolingbaic.kotlinbasic.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".ktolingbaic.kotlinbasic.LambdaActivity" />
+        <activity android:name=".ktolingbaic.kotlinbasic.LambdaActivity1" />
 
-        </activity>
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.LambdaActivity" />
-        <activity android:name="com.monebac.com.ktolingbaic.kotlinbasic.LambdaActivity1" />
+
+        <!--TODO Jetpack-->
+        <activity android:name=".jetpack.MainJetpackActivity" />
+        <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
+        <activity android:name=".jetpack.lifecycle.LifecyActivity" />
 
         <!-- TODO 无卡养卡Kotlin -->
 
-        <activity android:name="com.monebac.com.wkyk.act.LoginActivity">
+        <activity android:name=".wkyk.act.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.monebac.com.wkyk.act.BankCardListActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.YKchannelActivity" />
-        <activity android:name="com.monebac.com.wkyk.web.AgentWebActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.ShowImageActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.MakePlanDesActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.ChangeAreaActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.PreviewDetailActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.LookPlanActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.PlanDetailActivity" />
-        <activity android:name="com.monebac.com.wkyk.act.PayRecordListActivity" />
+        <activity android:name=".wkyk.act.BankCardListActivity" />
+        <activity android:name=".wkyk.act.YKchannelActivity" />
+        <activity android:name=".wkyk.web.AgentWebActivity" />
+        <activity android:name=".wkyk.act.ShowImageActivity" />
+        <activity android:name=".wkyk.act.MakePlanDesActivity" />
+        <activity android:name=".wkyk.act.ChangeAreaActivity" />
+        <activity android:name=".wkyk.act.PreviewDetailActivity" />
+        <activity android:name=".wkyk.act.LookPlanActivity" />
+        <activity android:name=".wkyk.act.PlanDetailActivity" />
+        <activity android:name=".wkyk.act.PayRecordListActivity" />
 
 
     </application>

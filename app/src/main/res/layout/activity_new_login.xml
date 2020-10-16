@@ -169,9 +169,19 @@
             android:id="@+id/tv_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
             android:gravity="center"
-            android:text="Kot"
+            android:text="kotlin"
+            android:textColor="@color/themColor"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_jetpack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:text="jetpack"
             android:textColor="@color/themColor"
             android:textSize="@dimen/sp_16" />
     </LinearLayout>

@@ -5,6 +5,7 @@ import com.monebac.com.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_list_filter.*
 
 class ListFilterActivity : BaseActivity() {
+
     override fun initLayout(): Int {
         return R.layout.activity_list_filter
     }
@@ -25,12 +26,9 @@ class ListFilterActivity : BaseActivity() {
         bt1.setOnClickListener {
             val toList = arrayOf.toList()
             val toMutableList = arrayOf.toMutableList()
-
             println(toList)
             println(toMutableList)
         }
-
-
 
 
         bt2.setOnClickListener {
