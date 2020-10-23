@@ -83,7 +83,7 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
         }
     }
 
-    override fun successList(list: List<BindCard>) {
+        override fun successList(list: List<BindCard>) {
         mList = list as ArrayList<BindCard>
         bindCardAdapter.setNewData(mList)
     }

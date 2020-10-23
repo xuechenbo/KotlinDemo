@@ -41,6 +41,9 @@
         <activity android:name=".jetpack.MainJetpackActivity" />
         <activity android:name=".jetpack.viewmodel.ViewModelActivity" />
         <activity android:name=".jetpack.lifecycle.LifecyActivity" />
+        <activity android:name=".jetpack.demo.SecondActivity" />
+        <activity android:name=".jetpack.livedata.LiveDataActivity" />
+
 
         <!-- TODO 无卡养卡Kotlin -->
 

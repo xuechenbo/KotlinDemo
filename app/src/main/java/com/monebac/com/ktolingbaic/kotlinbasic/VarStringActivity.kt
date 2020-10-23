@@ -129,8 +129,6 @@ class VarStringActivity : BaseActivity() {
             for (i in arrayListOf.indices) {
                 arrayListOf[i]
             }
-
-
         }
 
         //TODO 集合排序
@@ -219,6 +217,7 @@ class VarStringActivity : BaseActivity() {
 
         //TODO 空
         bt6.setOnClickListener {
+
             /**
              *  isNullOrEmpty   空指针，字符串长度为0            true
              *  isNullOrBlank   空指针，字符串长度为0或者全为空格  true
@@ -240,10 +239,8 @@ class VarStringActivity : BaseActivity() {
 
             leng_null = str?.length
 
-
             LogsUtils.e("使用?.可以获取null的值 $leng_null")
             val i = str?.length ?: 1
-
 
             //TODO ?.+?:  相当于三元运算符？？
             LogsUtils.e("使用?. ?:可以获取null的值 $i")

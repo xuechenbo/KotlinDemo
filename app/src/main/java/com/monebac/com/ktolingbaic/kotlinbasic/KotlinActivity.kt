@@ -112,6 +112,7 @@ class KotlinActivity : BaseActivity() {
 //            startActivity(intentFor.noHistory())
 //            //栈中存在待跳转的act，会重新创建一个实例，姜原来上的全部清除  区别:singtask onNewIntent启用，这个是onDestory 在create
 //            startActivity(intentFor.clearTop())
+
             true
 
         }
