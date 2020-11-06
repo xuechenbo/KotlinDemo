@@ -1,0 +1,29 @@
+[33m6944399[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: reset: moving to 6944399
+[33m6944399[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{1}: commit: jetpack
+[33m1539669[m[33m ([m[1;31morigin/kotlin2.0[m[33m)[m HEAD@{2}: commit: kolint2.0分支提交
+[33m008808d[m HEAD@{3}: commit: master分支提交
+[33m0c96d82[m HEAD@{4}: commit: jetpack
+[33m8e11b0c[m HEAD@{5}: Branch: renamed refs/heads/kotlin2.0 to refs/heads/master
+[33m8e11b0c[m HEAD@{7}: checkout: moving from master to kotlin2.0
+[33m8e11b0c[m HEAD@{8}: checkout: moving from kotlin2.0 to master
+[33m8e11b0c[m HEAD@{9}: checkout: moving from main to kotlin2.0
+[33m7b3e0f6[m HEAD@{10}: checkout: moving from kotlin2.0 to main
+[33m8e11b0c[m HEAD@{11}: checkout: moving from main to kotlin2.0
+[33m7b3e0f6[m HEAD@{12}: reset: moving to HEAD
+[33m7b3e0f6[m HEAD@{13}: reset: moving to HEAD
+[33m7b3e0f6[m HEAD@{14}: checkout: moving from kotlin2.0 to main
+[33m8e11b0c[m HEAD@{15}: checkout: moving from main to kotlin2.0
+[33m7b3e0f6[m HEAD@{16}: checkout: moving from kotlin2.0 to main
+[33m8e11b0c[m HEAD@{17}: commit: 改anroidXLinearLayoutManager
+[33m3cdf1ee[m HEAD@{18}: commit: 修改约束布局
+[33m7c299c3[m HEAD@{19}: checkout: moving from main to kotlin2.0
+[33m7b3e0f6[m HEAD@{20}: commit: 222
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{21}: reset: moving to HEAD
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{22}: checkout: moving from kotlin2.0 to main
+[33m7c299c3[m HEAD@{23}: commit: androidX
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{24}: checkout: moving from main to kotlin2.0
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{25}: checkout: moving from myKotlin2.0 to main
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{26}: checkout: moving from androidX to myKotlin2.0
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{27}: checkout: moving from main to androidX
+[33m1f5927e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{28}: commit: First Commit
+[33m74a8671[m HEAD@{29}: clone: from https://github.com/xuechenbo/KotlinDemo.git
