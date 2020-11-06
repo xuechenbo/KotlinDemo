@@ -1,0 +1,47 @@
+[33mcommit 1539669fcc296c545241214cf6b97fd9b15bcc55[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/kotlin2.0[m[33m)[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Fri Oct 16 15:25:52 2020 +0800
+
+    kolint2.0分支提交
+
+[33mcommit 008808d1e88bdc336040fd4cbe6fd6f7a232673c[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Fri Oct 16 15:24:23 2020 +0800
+
+    master分支提交
+
+[33mcommit 0c96d823e50d1971187f1442e141affefc95d076[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Fri Oct 16 15:17:16 2020 +0800
+
+    jetpack
+
+[33mcommit 8e11b0cacf6416ee5d797e87a3a1f35afd1ede26[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Thu Oct 15 16:22:04 2020 +0800
+
+    改anroidXLinearLayoutManager
+
+[33mcommit 3cdf1ee25bbc9fc04568ae4cf286cdf817fe3574[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Thu Oct 15 16:19:01 2020 +0800
+
+    修改约束布局
+
+[33mcommit 7c299c3c94ef56e54d952b99957fb1714af13d17[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Thu Oct 15 16:02:56 2020 +0800
+
+    androidX
+
+[33mcommit 1f5927e3b601615427f93a1f555c1fa48f2bd68b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: xuechenbo <1306765203@qq.com>
+Date:   Tue Oct 13 15:27:55 2020 +0800
+
+    First Commit
+
+[33mcommit 74a86716e5161d55fc2ad22210bb11bc211a7a8c[m
+Author: 就很棒 <31810657+xuechenbo@users.noreply.github.com>
+Date:   Tue Oct 13 15:21:15 2020 +0800
+
+    Initial commit

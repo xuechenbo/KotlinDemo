@@ -2,9 +2,9 @@ package com.monebac.com.ktolingbaic.kotlinbasic
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.OrientationHelper
 import android.widget.Button
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.OrientationHelper
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.monebac.com.R
@@ -112,6 +112,7 @@ class KotlinActivity : BaseActivity() {
 //            startActivity(intentFor.noHistory())
 //            //栈中存在待跳转的act，会重新创建一个实例，姜原来上的全部清除  区别:singtask onNewIntent启用，这个是onDestory 在create
 //            startActivity(intentFor.clearTop())
+
             true
 
         }

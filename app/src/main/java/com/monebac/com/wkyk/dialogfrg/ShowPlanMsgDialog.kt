@@ -1,11 +1,12 @@
 package com.monebac.com.wkyk.dialogfrg
 
+import android.app.DialogFragment.STYLE_NO_FRAME
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.monebac.com.R
 import com.monebac.com.wkyk.model.PreviewPlanModel
 import kotlinx.android.synthetic.main.dialogfragment_showplan.view.*
@@ -36,8 +37,8 @@ class ShowPlanMsgDialog : DialogFragment() {
     }
 
     fun initData(view: View) {
-        dialog.setCanceledOnTouchOutside(false)
-        val window = dialog.window
+        dialog!!.setCanceledOnTouchOutside(false)
+        val window = dialog!!.window
         window!!.setGravity(Gravity.CENTER)
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
@@ -53,10 +54,10 @@ class ShowPlanMsgDialog : DialogFragment() {
             tv_address.text = previewPlanModel.address.run {
                 "${this?.get("pri")!!.divisionName}-${this?.get("city")!!.divisionName}"
             }
-            close.setOnClickListener { dialog.dismiss() }
+            close.setOnClickListener { dialog!!.dismiss() }
             tv_submit.setOnClickListener {
                 myListener?.invoke()
-                dialog.dismiss()
+                dialog!!.dismiss()
             }
         }
     }

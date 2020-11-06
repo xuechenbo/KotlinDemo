@@ -1,8 +1,8 @@
 package com.monebac.com.wkyk.act
 
-import android.support.v7.widget.LinearLayoutManager
 import android.view.KeyEvent
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.monebac.com.R
 import com.monebac.com.base.BaseMvpActivity
 import com.monebac.com.utils.getMap
@@ -11,18 +11,19 @@ import com.monebac.com.wkyk.contract.BankCardListContract
 import com.monebac.com.wkyk.model.BindCard
 import com.monebac.com.wkyk.presenter.BankCardPresenter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
-import kotlinx.android.synthetic.main.activity_bank_list.*
+import kotlinx.android.synthetic.main.act_change_area.*
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+
 class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCardPresenter>(), BankCardListContract.View {
+
     var mList = ArrayList<BindCard>()
     private lateinit var bindCardAdapter: BindCardListAdapter
 
     override fun createPresenter(): BankCardPresenter {
         return BankCardPresenter()
     }
-
 
     override fun getLayoutResId(): Int = R.layout.activity_bank_list
 
@@ -36,12 +37,12 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
         super.initData()
         initListener()
         presenter.getCardList(
-                getMap(mutableMapOf("3" to "190932", "42" to getMerNo()))
-        )
+                getMap(mutableMapOf("3" to "190932", "42" to getMerNo())))
     }
 
     //TODO 匿名函数
     val initListener = fun() {
+
         other.setOnClickListener {
             //多条目布局
             startActivity<PayRecordListActivity>()
@@ -56,6 +57,8 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
                 )
             }
         }
+
+
         recyCler.run {
             layoutManager = LinearLayoutManager(context)
             bindCardAdapter = BindCardListAdapter(R.layout.item_bank_card, mList)
@@ -80,7 +83,7 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
         }
     }
 
-    override fun successList(list: List<BindCard>) {
+        override fun successList(list: List<BindCard>) {
         mList = list as ArrayList<BindCard>
         bindCardAdapter.setNewData(mList)
     }

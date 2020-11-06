@@ -170,7 +170,6 @@ class FunctionActivity : BaseActivity() {
         //TODO 日期函数
         bt10.setOnClickListener {
             DateUtil.nowDate
-
         }
 
 

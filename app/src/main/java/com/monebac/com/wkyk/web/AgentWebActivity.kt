@@ -7,6 +7,8 @@ import com.just.agentweb.AgentWeb
 import com.monebac.com.R
 import com.monebac.com.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_agent_web.*
+import kotlinx.android.synthetic.main.dialog_calendar.*
+import kotlinx.android.synthetic.main.dialog_calendar.tv_title
 import kotlinx.android.synthetic.main.layout_title.*
 
 class AgentWebActivity : BaseActivity() {
