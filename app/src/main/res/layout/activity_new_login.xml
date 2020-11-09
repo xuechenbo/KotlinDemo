@@ -14,6 +14,7 @@
         android:scaleType="fitXY" />
 
     <ImageView
+        android:id="@+id/tv_jetpack"
         android:layout_width="@dimen/dp_70"
         android:layout_height="@dimen/dp_70"
         android:layout_centerHorizontal="true"
@@ -166,22 +167,13 @@
             android:textSize="@dimen/sp_16" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             android:gravity="center"
             android:text="kotlin"
-            android:textColor="@color/themColor"
-            android:textSize="@dimen/sp_16" />
-
-        <TextView
-            android:id="@+id/tv_jetpack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
-            android:gravity="center"
-            android:text="jetpack"
             android:textColor="@color/themColor"
             android:textSize="@dimen/sp_16" />
     </LinearLayout>
