@@ -25,6 +25,7 @@ class LiveDataActivity : BaseActivity() {
      * lieveData属于被观察者，UI观察者
      */
     override fun initData() {
+
         back.setOnClickListener { finish() }
         tv_title.text = "LiveData"
 

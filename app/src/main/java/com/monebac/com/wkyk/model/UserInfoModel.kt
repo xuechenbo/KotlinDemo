@@ -127,20 +127,20 @@ data class UserInfoModelItem(
         val t0DebitRate: Int,
         val tab: String,
         val taxRegistrationNo: String,
-        val teamMoney: Int,
+        val teamMoney: String,
         val totalMoney: Double,
-        val transactionFlow: Int,
+        val transactionFlow: String,
         val uplevelTime: UplevelTime,
         val useStatus: String,
         val validTime: Any?,
         val withdrawStatus: String,
         val wkRate: Double,
         val wxId: String,
-        val ykBalance: Int,
-        val ykBigRate: Int,
-        val ykLimit: Int,
+        val ykBalance: String,
+        val ykBigRate: String,
+        val ykLimit: String,
         val ykRate: String,
-        val ykSmallRate: Int
+        val ykSmallRate: String
 )
 
 data class ExaminePassTime(

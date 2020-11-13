@@ -1,15 +1,15 @@
 package com.monebac.com.wkyk.act
 
+import android.util.Log
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.monebac.com.R
 import com.monebac.com.base.BaseActivity
-import com.monebac.com.utils.LogsUtils
-import com.monebac.com.utils.getList
+import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.adapter.LookPlanAdapter
 import com.monebac.com.wkyk.model.BindCard
 import com.monebac.com.wkyk.model.PlanAllModel
-import com.monebac.com.wkyk.netutils.BaseEntity
-import com.monebac.com.wkyk.netutils.OkClient
-import com.lzy.okgo.model.Response
+import com.monebac.com.wkyk.viewmodel.LookPlanViewModel
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import kotlinx.android.synthetic.main.activity_bank_list.*
 import kotlinx.android.synthetic.main.layout_title.*
@@ -21,10 +21,14 @@ class LookPlanActivity : BaseActivity() {
     private lateinit var mList: List<PlanAllModel>
     private lateinit var lookPlanAdapter: LookPlanAdapter
 
+    private val viewModel by lazy {
+        ViewModelProviders.of(this).get(LookPlanViewModel::class.java)
+    }
+
     override fun initLayout(): Int = R.layout.activity_look_plan
 
-
     override fun initData() {
+
         bindCard = intent.getSerializableExtra("BindCard_Class") as BindCard
         mList = ArrayList()
         back.setOnClickListener { finish() }
@@ -32,15 +36,30 @@ class LookPlanActivity : BaseActivity() {
         lookPlanAdapter = LookPlanAdapter(mList)
         recyCler.adapter = lookPlanAdapter
         initListener()
-        requestPlanItem()
+
+        viewModel.getListData(
+                getMap(mutableMapOf(
+                        "42" to getMerNo(),
+                        "3" to "190212",
+                        "43" to bindCard.BANK_ACCOUNT))
+        )
     }
 
     val initListener = {
+        viewModel.lookup.observe(this, Observer {
+            Log.e("详情：", it.toString())
+            lookPlanAdapter.setNewData(it)
+        })
+
+        viewModel.fail.observe(this, Observer {
+            toast(it)
+        })
+
         smarFresh.run {
             refreshHeader = ClassicsHeader(context)
             isEnableLoadmore = false
             setOnRefreshListener {
-                requestPlanItem()
+
             }
         }
 
@@ -52,33 +71,5 @@ class LookPlanActivity : BaseActivity() {
             }
         }
     }
-
-    private fun requestPlanItem() {
-        showProgress()
-        val params = OkClient.getParamsInstance().params
-        params.put("3", "190212")
-        params.put("42", getMerNo())
-        params.put("43", bindCard.BANK_ACCOUNT)
-        OkClient.getInstance().post(params, object : OkClient.EntityCallBack<BaseEntity>(context, BaseEntity::class.java) {
-            override fun onSuccess(response: Response<BaseEntity>?) {
-                hideProgress(smarFresh)
-                val result = response?.body() ?: return
-                if (result.str39 == "00") {
-                    mList = getList(result.str57)
-                    LogsUtils.d(mList.toString())
-                    lookPlanAdapter.setNewData(mList)
-
-                } else {
-                    toast(result.str39)
-                }
-            }
-
-            override fun onError(response: Response<BaseEntity>?) {
-                super.onError(response)
-                hideProgress(smarFresh)
-            }
-        })
-    }
-
 
 }
