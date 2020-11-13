@@ -2,7 +2,7 @@ package com.monebac.com.wkyk.act
 
 import com.monebac.com.R
 import com.monebac.com.base.BaseMvpActivity
-import com.monebac.com.jetpack.navigation.NavigationActivity
+import com.monebac.com.jetpack.coroutines.CoroutinesActivity
 import com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity
 import com.monebac.com.utils.LogsUtils
 import com.monebac.com.utils.PreferencesUtil
@@ -63,7 +63,8 @@ class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), Log
                         getMap(mutableMapOf(
                                 "1" to et_phone.text.toString(),
                                 "3" to "190928",
-                                "8" to Constant.Md5(et_pass.text.toString()))))
+                                "8" to Constant.Md5(et_pass.text.toString())))
+                )
             }
         }
 
@@ -78,9 +79,10 @@ class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), Log
         tv_jetpack.setOnClickListener {
 //            startActivity<MainJetpackActivity>()
 
-            startActivity<NavigationActivity>()
+//            startActivity<NavigationActivity>()
+//            startActivity<ViewModelActivity>()
+            startActivity<CoroutinesActivity>()
 
-            finish()
         }
     }
 

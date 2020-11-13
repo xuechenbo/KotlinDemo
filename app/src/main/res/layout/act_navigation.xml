@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#F6F4F4"
-        android:visibility="gone"
         app:itemTextColor="@drawable/text_selecter"
         app:menu="@menu/menu_main" />
 

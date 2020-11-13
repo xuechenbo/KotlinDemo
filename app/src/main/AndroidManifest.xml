@@ -37,6 +37,8 @@
         <activity android:name=".jetpack.demo.SecondActivity" />
         <activity android:name=".jetpack.livedata.LiveDataActivity" />
         <activity android:name=".jetpack.navigation.NavigationActivity" />
+        <activity android:name=".jetpack.coroutines.CoroutinesActivity" />
+        <activity android:name=".jetpack.coroutines.CoroutinesDemoActivity" />
 
 
         <!-- TODO 无卡养卡Kotlin -->

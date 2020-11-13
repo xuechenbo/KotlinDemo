@@ -6,4 +6,11 @@
 
     <include layout="@layout/layout_title" />
 
+
+
+    <Button
+        android:text="登录"
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
