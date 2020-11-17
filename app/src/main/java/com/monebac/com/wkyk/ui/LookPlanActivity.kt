@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.ui
 
 import android.util.Log
 import androidx.lifecycle.Observer

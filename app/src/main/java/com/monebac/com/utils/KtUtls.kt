@@ -46,10 +46,12 @@ fun LoadBigImage(context: Context, url: String, iv: ImageView) {
     }
 }
 
-fun getMap(map: MutableMap<String, String>): MutableMap<String, String> {
+fun getMap(map: MutableMap<String, String>, strNum: String = "42"): MutableMap<String, String> {
     map["0"] = "0700"
+    map[strNum] = PreferencesUtil.getString("merNo")
     map["59"] = Constant.VERSION
     map["64"] = getMacByHashMap(map)
+
     return map
 }
 

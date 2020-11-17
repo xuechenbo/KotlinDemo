@@ -18,7 +18,7 @@ typealias Error = suspend (Exception) -> Unit
 typealias Cancel = suspend (Exception) -> Unit
 
 open class BaseViewModel : ViewModel() {
-    val loginStatusInvalid: MutableLiveData<Boolean> = MutableLiveData()
+    val loading: MutableLiveData<Boolean> = MutableLiveData()
 
     /**
      * 创建并执行协程

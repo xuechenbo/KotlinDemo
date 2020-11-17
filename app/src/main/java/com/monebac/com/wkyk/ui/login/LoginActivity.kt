@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act.login
+package com.monebac.com.wkyk.ui.login
 
 import androidx.lifecycle.Observer
 import com.monebac.com.R
@@ -8,7 +8,7 @@ import com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity
 import com.monebac.com.utils.PreferencesUtil
 import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.Constant
-import com.monebac.com.wkyk.act.BankCardListActivity
+import com.monebac.com.wkyk.ui.act.BankCardListActivity
 import com.monebac.com.wkyk.web.AgentWebActivity
 import kotlinx.android.synthetic.main.activity_new_login.*
 import org.jetbrains.anko.startActivity
@@ -72,7 +72,7 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
                 }
             })
             loading.observe(this@LoginActivity, Observer {
-                if (it) showProgressDialog(R.string.logging_in) else dismissProgressDialog()
+                if (it) showProgressDialog(R.string.loading) else dismissProgressDialog()
             })
         }
     }

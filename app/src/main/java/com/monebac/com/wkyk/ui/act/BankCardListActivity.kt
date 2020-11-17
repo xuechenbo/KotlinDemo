@@ -1,31 +1,32 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.ui.act
 
 import android.view.KeyEvent
 import android.view.View
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.monebac.com.R
-import com.monebac.com.base.BaseMvpActivity
+import com.monebac.com.jetpack.jetbase.BaseVmActivity
 import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.adapter.BindCardListAdapter
-import com.monebac.com.wkyk.contract.BankCardListContract
 import com.monebac.com.wkyk.model.BindCard
-import com.monebac.com.wkyk.presenter.BankCardPresenter
+import com.monebac.com.wkyk.ui.LookPlanActivity
+import com.monebac.com.wkyk.ui.PayRecordListActivity
+import com.monebac.com.wkyk.ui.YKchannelActivity
+import com.monebac.com.wkyk.ui.vm.BankCardViewModel
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import kotlinx.android.synthetic.main.act_change_area.*
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import kotlin.system.exitProcess
 
-class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCardPresenter>(), BankCardListContract.View {
-
+class BankCardListActivity : BaseVmActivity<BankCardViewModel>() {
     var mList = ArrayList<BindCard>()
     private lateinit var bindCardAdapter: BindCardListAdapter
 
-    override fun createPresenter(): BankCardPresenter {
-        return BankCardPresenter()
-    }
+    override fun viewModelClass(): Class<BankCardViewModel> = BankCardViewModel::class.java
 
-    override fun getLayoutResId(): Int = R.layout.activity_bank_list
+    override fun layoutRes(): Int = R.layout.activity_bank_list
 
     override fun initView() {
         back.visibility = View.GONE
@@ -33,71 +34,57 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
         other.visibility = View.VISIBLE
     }
 
-    override fun initData() {
-        super.initData()
-        initListener()
-        presenter.getCardList(
-                getMap(mutableMapOf("3" to "190932", "42" to getMerNo())))
+
+    override fun observe() {
+        super.observe()
+        mViewModel.run {
+            bankList.observe(this@BankCardListActivity, Observer {
+                smarFresh.finishRefresh()
+                bindCardAdapter.setNewData(it)
+            })
+            loading.observe(this@BankCardListActivity, Observer {
+//                if (it) showProgressDialog(R.string.loading) else dismissProgressDialog()
+            })
+        }
     }
 
-    //TODO 匿名函数
-    val initListener = fun() {
 
-        other.setOnClickListener {
-            //多条目布局
-            startActivity<PayRecordListActivity>()
-        }
-
-        smarFresh.run {
-            isEnableLoadmore = false
-            refreshHeader = ClassicsHeader(context)
-            setOnRefreshListener {
-                presenter.getCardList(
-                        getMap(mutableMapOf("3" to "190932", "42" to getMerNo()))
-                )
-            }
-        }
-
-
+    override fun initData() {
+        smarFresh.autoRefresh()
         recyCler.run {
             layoutManager = LinearLayoutManager(context)
             bindCardAdapter = BindCardListAdapter(R.layout.item_bank_card, mList)
             adapter = bindCardAdapter
         }
 
+        other.setOnClickListener {
+            startActivity<PayRecordListActivity>()
+        }
+        smarFresh.run {
+            isEnableLoadmore = false
+            refreshHeader = ClassicsHeader(context)
+            setOnRefreshListener {
+                mViewModel.getBankList(map)
+            }
+        }
+
         bindCardAdapter.run {
-            setOnItemChildClickListener { _, view, postion ->
+            setOnItemChildClickListener { adapter, view, postion ->
+                val data = adapter.data[postion] as BindCard
                 when (view.id) {
                     R.id.tv_plan -> {
-                        if (mList[postion].plancount == 0)
+                        if (data.plancount == 0)
                             startActivity<YKchannelActivity>("BindCard_Class" to mList[postion])
                         else
                             toast("有计划执行中...")
                     }
-                    R.id.tv_look_plan -> startActivity<LookPlanActivity>("BindCard_Class" to mList[postion])
+                    R.id.tv_look_plan -> startActivity<LookPlanActivity>("BindCard_Class" to data)
                 }
             }
             setOnItemClickListener { _, _, _ ->
 
             }
         }
-    }
-
-        override fun successList(list: List<BindCard>) {
-        mList = list as ArrayList<BindCard>
-        bindCardAdapter.setNewData(mList)
-    }
-
-    override fun failStr(string: String) {
-        toast(string)
-    }
-
-    override fun showLoading() {
-        showProgress()
-    }
-
-    override fun dismissLoading() {
-        hideProgress(smarFresh)
     }
 
     private var firstime: Long = 0
@@ -109,9 +96,14 @@ class BankCardListActivity : BaseMvpActivity<BankCardListContract.View, BankCard
                 firstime = System.currentTimeMillis()
                 return true
             } else {
-                System.exit(0)
+                exitProcess(0)
             }
         }
         return super.onKeyDown(keyCode, event)
     }
+
+    companion object {
+        var map = getMap(mutableMapOf("3" to "190932"))
+    }
+
 }

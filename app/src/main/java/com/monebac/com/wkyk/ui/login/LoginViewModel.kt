@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act.login
+package com.monebac.com.wkyk.ui.login
 
 import androidx.lifecycle.MutableLiveData
 import com.monebac.com.jetpack.coroutines.LoginRepository
@@ -16,9 +16,7 @@ class LoginViewModel : BaseViewModel() {
     private val loginRepository by lazy {
         LoginRepository()
     }
-
     val loginMsg = MutableLiveData<String>()
-    val loading = MutableLiveData<Boolean>()
 
     fun login(map: MutableMap<String, String>) {
         launch(

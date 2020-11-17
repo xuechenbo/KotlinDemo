@@ -1,7 +1,9 @@
 package com.monebac.com.jetpack.jetbase
 
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.monebac.com.R
 
 abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
 
@@ -29,6 +31,8 @@ abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
     abstract fun initData()
 
     open fun observe() {
-
+//        mViewModel.loading.observe(this, Observer {
+//            if (it) showProgressDialog(R.string.loading) else dismissProgressDialog()
+//        })
     }
 }
