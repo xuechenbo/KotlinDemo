@@ -1,48 +1,40 @@
 package com.monebac.com.jetpack.coroutines
 
-import android.util.Log
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.monebac.com.R
-import com.monebac.com.jetpack.BaseJetActivity
+import com.monebac.com.jetpack.jetbase.BaseVmActivity
+import com.monebac.com.utils.getMap
+import com.monebac.com.wkyk.Constant
 import kotlinx.android.synthetic.main.act_coroutines_demo.*
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.toast
 
-class CoroutinesDemoActivity : BaseJetActivity() {
+class CoroutinesDemoActivity : BaseVmActivity<CoroutinecViewModel>() {
 
-    private val viewmodel by lazy {
-        //新版写法
-        ViewModelProvider(this)[CoroutinecViewModel::class.java]
-        //旧版写法
-//        ViewModelProviders.of(this).get(CoroutinecViewModel::class.java)
-    }
+    override fun layoutRes() = R.layout.act_coroutines_demo
 
-    override fun initLayout(): Int = R.layout.act_coroutines_demo
+    override fun viewModelClass() = CoroutinecViewModel::class.java
 
     override fun initData() {
 
-        tv_title.text = "coroutines"
+        tv_title.text = "登录"
         back.setOnClickListener { finish() }
 
         btn.setOnClickListener {
-            viewmodel.getData()
+            mViewModel.getData(getMap(mutableMapOf(
+                    "1" to "13858069996",
+                    "3" to "190928",
+                    "8" to Constant.Md5("123456"))))
         }
+    }
 
-        viewmodel.loadState.observe(this, Observer {
-            when (it) {
-                is LoadState.Fail -> {
-                    Log.e("测试", "fail")
-                }
-                else -> {
-                    Log.e("测试", "else")
-                }
-            }
-        })
+    override fun initView() {
 
-        viewmodel.imageData.observe(this, Observer {
-            Log.e("测试", "imageData")
+    }
 
+    override fun observe() {
+        super.observe()
+        mViewModel.loginMsg.observe(this, Observer {
             toast(it)
         })
     }

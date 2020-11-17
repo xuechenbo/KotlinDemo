@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.layout_title.*
 import kotlinx.coroutines.*
 import org.jetbrains.anko.startActivity
 
-class CoroutinesActivity : BaseActivity() {
+class CoroutinesTestActivity : BaseActivity() {
 
     var strContent = ""
 

@@ -2,6 +2,7 @@ package com.monebac.com.utils
 
 import android.content.Context
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.gson.Gson
@@ -72,6 +73,10 @@ fun getMacByHashMap(map: Map<String, String>): String {
         sb.append(intMap[keyId])
     }
     return Constant.Md5(sb.toString() + mainKey)
+}
+
+fun Context.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
 

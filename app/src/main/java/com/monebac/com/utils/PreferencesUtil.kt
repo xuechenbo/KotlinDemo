@@ -8,7 +8,7 @@ object PreferencesUtil {
 
     val name = "APP_Info"
     private val prefs: SharedPreferences by lazy {
-        App.instance().applicationContext.getSharedPreferences(name, Context.MODE_PRIVATE)
+        App.instance.applicationContext.getSharedPreferences(name, Context.MODE_PRIVATE)
     }
 
     fun getValue(key: String, default: Any): Any = with(prefs) {

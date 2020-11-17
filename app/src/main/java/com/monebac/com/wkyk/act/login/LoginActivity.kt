@@ -1,30 +1,24 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.act.login
 
+import androidx.lifecycle.Observer
 import com.monebac.com.R
-import com.monebac.com.base.BaseMvpActivity
-import com.monebac.com.jetpack.coroutines.CoroutinesActivity
+import com.monebac.com.jetpack.coroutines.CoroutinesTestActivity
+import com.monebac.com.jetpack.jetbase.BaseVmActivity
 import com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity
-import com.monebac.com.utils.LogsUtils
 import com.monebac.com.utils.PreferencesUtil
-import com.monebac.com.utils.fromJson
 import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.Constant
-import com.monebac.com.wkyk.contract.LoginContract
-import com.monebac.com.wkyk.model.UserInfoModel
-import com.monebac.com.wkyk.netutils.BaseResp
-import com.monebac.com.wkyk.presenter.LoginPresenter
+import com.monebac.com.wkyk.act.BankCardListActivity
 import com.monebac.com.wkyk.web.AgentWebActivity
 import kotlinx.android.synthetic.main.activity_new_login.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), LoginContract.View {
+class LoginActivity : BaseVmActivity<LoginViewModel>() {
+    override fun layoutRes(): Int = R.layout.activity_new_login
 
-    override fun getLayoutResId(): Int = R.layout.activity_new_login
-
-
-    override fun createPresenter(): LoginPresenter {
-        return LoginPresenter()
+    override fun viewModelClass(): Class<LoginViewModel> {
+        return LoginViewModel::class.java
     }
 
     override fun initView() {
@@ -36,30 +30,12 @@ class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), Log
         }
     }
 
-    override fun onLoginSuccess(result: BaseResp) {
-        LogsUtils.d(result.toString())
-        val fromJson = fromJson<UserInfoModel>(result.str42)
-        val userInfoModelItem = fromJson?.get(0)
-        LogsUtils.e(userInfoModelItem!!.merchantNo)
-        PreferencesUtil.saveValue("merNo", userInfoModelItem.merchantNo)
-        PreferencesUtil.saveValue("merId", userInfoModelItem.id)
-        PreferencesUtil.saveValue("phone", et_phone.text.toString())
-        PreferencesUtil.saveValue("pwd", et_pass.text.toString())
-        startActivity<BankCardListActivity>()
-        finish()
-    }
-
-    override fun onLoginFail(str: String) {
-        toast(str)
-    }
-
     override fun initData() {
-        super.initData()
         btn_login.setOnClickListener {
             when {
                 et_phone.text.isNullOrEmpty() -> toast("手机号为空")
                 et_pass.text.isNullOrEmpty() -> toast("密码为空")
-                else -> presenter.LoginSub(
+                else -> mViewModel.login(
                         getMap(mutableMapOf(
                                 "1" to et_phone.text.toString(),
                                 "3" to "190928",
@@ -67,32 +43,39 @@ class LoginActivity : BaseMvpActivity<LoginContract.View, LoginPresenter>(), Log
                 )
             }
         }
-
         tv_start.setOnClickListener {
             startActivity<KotlinActivity>()
         }
-
         tv_forget_pass.setOnClickListener {
             startActivity<AgentWebActivity>("title" to "忘记密码", "url" to "https://www.zhihu.com")
         }
-
         tv_jetpack.setOnClickListener {
 //            startActivity<MainJetpackActivity>()
-
 //            startActivity<NavigationActivity>()
 //            startActivity<ViewModelActivity>()
-            startActivity<CoroutinesActivity>()
-
+            startActivity<CoroutinesTestActivity>()
         }
     }
 
 
-    override fun showLoading() {
-        showProgress()
+    override fun observe() {
+        super.observe()
+        mViewModel.run {
+            loginMsg.observe(this@LoginActivity, Observer {
+                if (it == "00") {
+                    PreferencesUtil.saveValue("phone", et_phone.text.toString())
+                    PreferencesUtil.saveValue("pwd", et_pass.text.toString())
+                    startActivity<BankCardListActivity>()
+                    finish()
+                } else {
+                    toast(it)
+                }
+            })
+            loading.observe(this@LoginActivity, Observer {
+                if (it) showProgressDialog(R.string.logging_in) else dismissProgressDialog()
+            })
+        }
     }
 
-    override fun dismissLoading() {
-        hideProgress()
-    }
 
 }
