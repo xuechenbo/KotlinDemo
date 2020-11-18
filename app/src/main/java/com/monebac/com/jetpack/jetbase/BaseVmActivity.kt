@@ -1,9 +1,8 @@
 package com.monebac.com.jetpack.jetbase
 
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.monebac.com.R
+import androidx.lifecycle.ViewModelProviders
 
 abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
 
@@ -21,7 +20,8 @@ abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
      * 初始化ViewModel
      */
     private fun initViewModel() {
-        mViewModel = ViewModelProvider(this)[viewModelClass()]
+//        mViewModel = ViewModelProvider(this)[viewModelClass()]
+        mViewModel = ViewModelProviders.of(this).get(viewModelClass())
     }
 
     protected abstract fun viewModelClass(): Class<VM>

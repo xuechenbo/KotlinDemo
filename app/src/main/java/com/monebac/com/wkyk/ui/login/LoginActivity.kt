@@ -76,6 +76,4 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
             })
         }
     }
-
-
 }

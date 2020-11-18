@@ -51,7 +51,6 @@ fun getMap(map: MutableMap<String, String>, strNum: String = "42"): MutableMap<S
     map[strNum] = PreferencesUtil.getString("merNo")
     map["59"] = Constant.VERSION
     map["64"] = getMacByHashMap(map)
-
     return map
 }
 
@@ -63,7 +62,6 @@ fun getMap(map: MutableMap<String, String>, strNum: String = "42"): MutableMap<S
  */
 fun getMacByHashMap(map: Map<String, String>): String {
     val intMap = mutableMapOf<Any, Any>()
-
     for (str in map.keys) {
         map[str]?.let { intMap.put(Integer.valueOf(str), it) }
     }

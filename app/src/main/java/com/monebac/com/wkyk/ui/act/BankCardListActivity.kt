@@ -21,7 +21,9 @@ import org.jetbrains.anko.toast
 import kotlin.system.exitProcess
 
 class BankCardListActivity : BaseVmActivity<BankCardViewModel>() {
+
     var mList = ArrayList<BindCard>()
+
     private lateinit var bindCardAdapter: BindCardListAdapter
 
     override fun viewModelClass(): Class<BankCardViewModel> = BankCardViewModel::class.java
@@ -33,7 +35,6 @@ class BankCardListActivity : BaseVmActivity<BankCardViewModel>() {
         tv_title.text = "信用卡列表"
         other.visibility = View.VISIBLE
     }
-
 
     override fun observe() {
         super.observe()

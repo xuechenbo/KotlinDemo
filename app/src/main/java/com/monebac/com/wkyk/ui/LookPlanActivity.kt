@@ -2,7 +2,7 @@ package com.monebac.com.wkyk.ui
 
 import android.util.Log
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.monebac.com.R
 import com.monebac.com.base.BaseActivity
 import com.monebac.com.utils.getMap
@@ -22,8 +22,7 @@ class LookPlanActivity : BaseActivity() {
     private lateinit var lookPlanAdapter: LookPlanAdapter
 
     private val viewModel by lazy {
-        ViewModelProvider(this)[LookPlanViewModel::class.java]
-
+        ViewModelProviders.of(this).get(LookPlanViewModel::class.java)
 //        ViewModelProviders.of(this).get(LookPlanViewModel::class.java)
     }
 
