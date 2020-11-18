@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.ui
 
 import android.content.Intent
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,7 +14,6 @@ import com.monebac.com.wkyk.netutils.BaseEntity
 import com.monebac.com.wkyk.netutils.OkClient
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import kotlinx.android.synthetic.main.act_change_area.*
-import kotlinx.android.synthetic.main.dialog_calendar.*
 import kotlinx.android.synthetic.main.dialog_calendar.tv_title
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.toast

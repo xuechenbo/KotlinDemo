@@ -37,29 +37,29 @@
         <activity android:name=".jetpack.demo.SecondActivity" />
         <activity android:name=".jetpack.livedata.LiveDataActivity" />
         <activity android:name=".jetpack.navigation.NavigationActivity" />
-        <activity android:name=".jetpack.coroutines.CoroutinesActivity" />
+        <activity android:name=".jetpack.coroutines.CoroutinesTestActivity" />
         <activity android:name=".jetpack.coroutines.CoroutinesDemoActivity" />
 
 
         <!-- TODO 无卡养卡Kotlin -->
 
-        <activity android:name=".wkyk.act.LoginActivity">
+        <activity android:name=".wkyk.ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".wkyk.act.BankCardListActivity" />
-        <activity android:name=".wkyk.act.YKchannelActivity" />
+        <activity android:name=".wkyk.ui.act.BankCardListActivity" />
+        <activity android:name=".wkyk.ui.YKchannelActivity" />
         <activity android:name=".wkyk.web.AgentWebActivity" />
-        <activity android:name=".wkyk.act.ShowImageActivity" />
-        <activity android:name=".wkyk.act.MakePlanDesActivity" />
-        <activity android:name=".wkyk.act.ChangeAreaActivity" />
-        <activity android:name=".wkyk.act.PreviewDetailActivity" />
-        <activity android:name=".wkyk.act.LookPlanActivity" />
-        <activity android:name=".wkyk.act.PlanDetailActivity" />
-        <activity android:name=".wkyk.act.PayRecordListActivity" />
+        <activity android:name=".wkyk.ui.ShowImageActivity" />
+        <activity android:name=".wkyk.ui.MakePlanDesActivity" />
+        <activity android:name=".wkyk.ui.ChangeAreaActivity" />
+        <activity android:name=".wkyk.ui.PreviewDetailActivity" />
+        <activity android:name=".wkyk.ui.LookPlanActivity" />
+        <activity android:name=".wkyk.ui.PlanDetailActivity" />
+        <activity android:name=".wkyk.ui.PayRecordListActivity" />
 
 
     </application>

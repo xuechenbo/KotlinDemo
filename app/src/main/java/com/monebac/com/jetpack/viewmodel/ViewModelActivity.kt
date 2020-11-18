@@ -5,13 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.monebac.com.R
-import com.monebac.com.jetpack.BaseJetActivity
+import com.monebac.com.base.BaseActivity
 import com.monebac.com.utils.getMap
 import kotlinx.android.synthetic.main.act_view_model.*
 import kotlinx.android.synthetic.main.layout_title.*
 import org.jetbrains.anko.toast
 
-class ViewModelActivity : BaseJetActivity() {
+class ViewModelActivity : BaseActivity() {
     /**
      * 可以解决数据不一保存问题
      * ViewModel

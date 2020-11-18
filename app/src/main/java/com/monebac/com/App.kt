@@ -3,9 +3,12 @@ package com.monebac.com
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import kotlin.properties.Delegates
+import com.monebac.com.utils.isMainProcess
 
 class App : Application() {
+    companion object {
+        lateinit var instance: App
+    }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
@@ -15,13 +18,15 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        // 主进程初始化
+        if (isMainProcess(this)) {
+            init()
+        }
     }
 
+    private fun init() {
 
-    //TODO Delegates 保证自身为空的工具？？
-    companion object {
-        private var instance: App by Delegates.notNull()
-        fun instance() = instance
+
     }
 
 

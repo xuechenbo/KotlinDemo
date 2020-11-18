@@ -4,103 +4,134 @@ package com.monebac.com.wkyk.netutils;
 import com.google.gson.annotations.SerializedName;
 
 public class BaseResp {
+
+
+    @SerializedName("1")
+    private String str1;
+    @SerializedName("2")
+    private String str2;
+    @SerializedName("3")
+    private String str3;
     @SerializedName("4")
     private String str4;
     @SerializedName("5")
     private String str5;
     @SerializedName("6")
     private String str6;
-    @SerializedName( "7")
+    @SerializedName("7")
     private String str7;
-    @SerializedName( "8")
+    @SerializedName("8")
     private String str8;
-    @SerializedName( "9")
+    @SerializedName("9")
     private String str9;
-    @SerializedName( "10")
+    @SerializedName("10")
     private String str10;
-    @SerializedName( "11")
+    @SerializedName("11")
     private String str11;
-    @SerializedName( "12")
+    @SerializedName("12")
     private String str12;
-    @SerializedName( "13")
+    @SerializedName("13")
     private String str13;
-    @SerializedName( "14")
+    @SerializedName("14")
     private String str14;
-    @SerializedName( "15")
+    @SerializedName("15")
     private String str15;
-    @SerializedName( "16")
+    @SerializedName("16")
     private String str16;
-    @SerializedName( "17")
+    @SerializedName("17")
     private String str17;
-    @SerializedName( "18")
+    @SerializedName("18")
     private String str18;
-    @SerializedName( "19")
+    @SerializedName("19")
     private String str19;
-    @SerializedName( "20")
+    @SerializedName("20")
     private String str20;
-    @SerializedName( "21")
+    @SerializedName("21")
     private String str21;
-    @SerializedName( "22")
+    @SerializedName("22")
     private String str22;
-    @SerializedName( "23")
+    @SerializedName("23")
     private String str23;
-    @SerializedName( "24")
+    @SerializedName("24")
     private String str24;
-    @SerializedName( "25")
+    @SerializedName("25")
     private String str25;
-    @SerializedName( "26")
+    @SerializedName("26")
     private String str26;
-    @SerializedName( "27")
+    @SerializedName("27")
     private String str27;
-    @SerializedName( "28")
+    @SerializedName("28")
     private String str28;
-    @SerializedName( "29")
+    @SerializedName("29")
     private String str29;
-    @SerializedName( "30")
+    @SerializedName("30")
     private String str30;
-    @SerializedName( "31")
+    @SerializedName("31")
     private String str31;
-    @SerializedName( "32")
+    @SerializedName("32")
     private String str32;
-    @SerializedName( "33")
+    @SerializedName("33")
     private String str33;
-    @SerializedName( "34")
+    @SerializedName("34")
     private String str34;
-    @SerializedName( "35")
+    @SerializedName("35")
     private String str35;
-    @SerializedName( "36")
+    @SerializedName("36")
     private String str36;
-    @SerializedName( "38")
+    @SerializedName("38")
     private String str38;
-    @SerializedName( "39")
+    @SerializedName("39")
     private String str39;
-    @SerializedName( "40")
+    @SerializedName("40")
     private String str40;
-    @SerializedName( "41")
+    @SerializedName("41")
     private String str41;
-    @SerializedName( "42")
+    @SerializedName("42")
     private String str42;
-    @SerializedName( "43")
+    @SerializedName("43")
     private String str43;
-    @SerializedName( "44")
+    @SerializedName("44")
     private String str44;
-    @SerializedName( "45")
+    @SerializedName("45")
     private String str45;
-    @SerializedName( "46")
+    @SerializedName("46")
     private String str46;
-    @SerializedName( "47")
+    @SerializedName("47")
     private String str47;
-    @SerializedName( "48")
+    @SerializedName("48")
     private String str48;
-    @SerializedName( "49")
+    @SerializedName("49")
     private String str49;
-    @SerializedName( "55")
+    @SerializedName("55")
     private String str55;
-    @SerializedName( "57")
+    @SerializedName("57")
     private String str57;
-    @SerializedName( "60")
+    @SerializedName("60")
     private String str60;
 
+    public String getStr1() {
+        return str1 == null ? "" : str1;
+    }
+
+    public void setStr1(String str1) {
+        this.str1 = str1;
+    }
+
+    public String getStr2() {
+        return str2 == null ? "" : str2;
+    }
+
+    public void setStr2(String str2) {
+        this.str2 = str2;
+    }
+
+    public String getStr3() {
+        return str3 == null ? "" : str3;
+    }
+
+    public void setStr3(String str3) {
+        this.str3 = str3;
+    }
 
 
     public String getStr17() {

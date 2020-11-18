@@ -2,6 +2,7 @@ package com.monebac.com.utils
 
 import android.content.Context
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.gson.Gson
@@ -45,8 +46,9 @@ fun LoadBigImage(context: Context, url: String, iv: ImageView) {
     }
 }
 
-fun getMap(map: MutableMap<String, String>): MutableMap<String, String> {
+fun getMap(map: MutableMap<String, String>, strNum: String = "42"): MutableMap<String, String> {
     map["0"] = "0700"
+    map[strNum] = PreferencesUtil.getString("merNo")
     map["59"] = Constant.VERSION
     map["64"] = getMacByHashMap(map)
     return map
@@ -60,7 +62,6 @@ fun getMap(map: MutableMap<String, String>): MutableMap<String, String> {
  */
 fun getMacByHashMap(map: Map<String, String>): String {
     val intMap = mutableMapOf<Any, Any>()
-
     for (str in map.keys) {
         map[str]?.let { intMap.put(Integer.valueOf(str), it) }
     }
@@ -72,6 +73,10 @@ fun getMacByHashMap(map: Map<String, String>): String {
         sb.append(intMap[keyId])
     }
     return Constant.Md5(sb.toString() + mainKey)
+}
+
+fun Context.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
 

@@ -1,6 +1,7 @@
 package com.xing.wanandroid.http
 
 import com.google.gson.JsonParseException
+import com.monebac.com.http.ApiException
 import com.monebac.com.utils.LogsUtils
 import org.apache.http.conn.ConnectTimeoutException
 import org.json.JSONException

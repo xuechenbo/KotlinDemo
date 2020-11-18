@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.ui
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.monebac.com.R

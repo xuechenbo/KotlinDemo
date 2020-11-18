@@ -1,7 +1,7 @@
 package com.monebac.com.base
 
 import com.xing.wanandroid.base.BaseResponse
-import com.xing.wanandroid.http.BaseObserver
+import com.monebac.com.http.BaseObserver
 import com.xing.wanandroid.http.RetrofitClient
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

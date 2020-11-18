@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.act
+package com.monebac.com.wkyk.ui
 
 import android.util.Log
 import androidx.lifecycle.Observer
@@ -23,6 +23,7 @@ class LookPlanActivity : BaseActivity() {
 
     private val viewModel by lazy {
         ViewModelProviders.of(this).get(LookPlanViewModel::class.java)
+//        ViewModelProviders.of(this).get(LookPlanViewModel::class.java)
     }
 
     override fun initLayout(): Int = R.layout.activity_look_plan

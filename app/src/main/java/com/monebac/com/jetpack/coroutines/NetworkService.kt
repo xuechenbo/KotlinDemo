@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit
 
 object NetworkService {
     //实例Retrofit
-
     //retorfit实例，在这里做一些统一网络配置，如添加转换器、设置超时时间等
     private val retrofit = Retrofit.Builder()
             .client(Builder().callTimeout(5, TimeUnit.SECONDS).build())
