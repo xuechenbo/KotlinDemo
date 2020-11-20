@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import com.alibaba.fastjson.JSON;
 import com.monebac.com.R;
 import com.monebac.com.utils.LogsUtils;
-import com.monebac.com.utils.ViewUtils;
 import com.monebac.com.wkyk.Constant;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.AbsCallback;
@@ -249,11 +248,9 @@ public class OkClient {
                 return;
             }
             if (response.getException() != null && response.getException() instanceof ConnectException) {
-                ViewUtils.MakeToast(mContext, mContext.getString(R.string.nonetwork), 500);
                 LogsUtils.e("response=" + response.getException());
             } else {
                 LogsUtils.e("response=" + response.body());
-                ViewUtils.MakeToast(mContext, mContext.getString(R.string.server_error), 500);
             }
 
 
@@ -263,7 +260,6 @@ public class OkClient {
         public void onSuccess(Response<T> response) {
             LogsUtils.e("response=" + response.body());
             if (baseEntity == null) {
-                ViewUtils.MakeToast(mContext, mContext.getString(R.string.server_error), 500);
                 return;
             }
             String code = baseEntity.getStr39();
@@ -271,7 +267,6 @@ public class OkClient {
                 case "00":
                     break;
                 default:
-                    ViewUtils.MakeToast(mContext, code, 1000);
                     break;
             }
 

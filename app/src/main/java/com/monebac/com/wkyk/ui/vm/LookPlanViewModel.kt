@@ -3,24 +3,25 @@ package com.monebac.com.wkyk.ui.vm
 import androidx.lifecycle.MutableLiveData
 import com.monebac.com.jetpack.jetbase.BaseViewModel
 import com.monebac.com.utils.getList
-import com.monebac.com.wkyk.model.BindCard
+import com.monebac.com.wkyk.model.PlanAllModel
 
-class BankCardViewModel : BaseViewModel() {
+class LookPlanViewModel : BaseViewModel() {
+    var lookup: MutableLiveData<List<PlanAllModel>> = MutableLiveData()
+
     override fun onCleared() {
         super.onCleared()
     }
 
-    val bankList = MutableLiveData<List<BindCard>>()
-
-    fun getBankList(map: MutableMap<String, String>) {
+    fun getListData(map: MutableMap<String, String>) {
         launch(
                 block = {
-                    loading.value = true
                     val result = resultRepository.getResult(map)
                     if (result.str39 == "00") {
-                        bankList.value = getList(result.str57)
+                        lookup.value = getList(result.str57)
                     }
-                    loading.value = false
+                },
+                error = {
+
                 }
         )
     }

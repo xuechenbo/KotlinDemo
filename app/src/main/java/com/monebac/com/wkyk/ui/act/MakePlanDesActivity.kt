@@ -1,4 +1,4 @@
-package com.monebac.com.wkyk.ui
+package com.monebac.com.wkyk.ui.act
 
 import android.content.Intent
 import com.monebac.com.R
@@ -14,6 +14,7 @@ import com.monebac.com.wkyk.model.PreviewPlanModel
 import com.monebac.com.wkyk.netutils.BaseEntity
 import com.monebac.com.wkyk.netutils.OkClient
 import com.lzy.okgo.model.Response
+import com.monebac.com.wkyk.ui.ChangeAreaActivity
 import kotlinx.android.synthetic.main.act_change_area.*
 import kotlinx.android.synthetic.main.activity_make_design.*
 import kotlinx.android.synthetic.main.layout_plan_header.*

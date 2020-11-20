@@ -1,7 +1,6 @@
 package com.monebac.com.jetpack.jetbase
 
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 
 abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
@@ -34,5 +33,12 @@ abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
 //        mViewModel.loading.observe(this, Observer {
 //            if (it) showProgressDialog(R.string.loading) else dismissProgressDialog()
 //        })
+    }
+
+    protected fun setCustomToolBar(
+            isVisibleLeftIcon: Boolean = false,
+            toolbarTitle: String = ""
+    ) {
+
     }
 }

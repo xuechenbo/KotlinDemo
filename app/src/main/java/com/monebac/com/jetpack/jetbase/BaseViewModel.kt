@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.monebac.com.App
 import com.monebac.com.jetpack.coroutines.ApiException
 import com.monebac.com.utils.showToast
+import com.monebac.com.wkyk.ui.repository.ResultRepository
 import kotlinx.coroutines.*
 import org.json.JSONException
 import retrofit2.HttpException
@@ -19,6 +20,11 @@ typealias Cancel = suspend (Exception) -> Unit
 
 open class BaseViewModel : ViewModel() {
     val loading: MutableLiveData<Boolean> = MutableLiveData()
+
+
+    val resultRepository by lazy {
+        ResultRepository()
+    }
 
     /**
      * 创建并执行协程

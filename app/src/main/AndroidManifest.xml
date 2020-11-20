@@ -51,14 +51,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".wkyk.ui.act.BankCardListActivity" />
-        <activity android:name=".wkyk.ui.YKchannelActivity" />
+        <activity android:name=".wkyk.ui.act.YKchannelActivity" />
         <activity android:name=".wkyk.web.AgentWebActivity" />
-        <activity android:name=".wkyk.ui.ShowImageActivity" />
-        <activity android:name=".wkyk.ui.MakePlanDesActivity" />
+        <activity android:name=".wkyk.web.AgentTestActivity" />
+        <activity android:name=".wkyk.ui.act.ShowImageActivity" />
+        <activity android:name=".wkyk.ui.act.MakePlanDesActivity" />
         <activity android:name=".wkyk.ui.ChangeAreaActivity" />
         <activity android:name=".wkyk.ui.PreviewDetailActivity" />
-        <activity android:name=".wkyk.ui.LookPlanActivity" />
-        <activity android:name=".wkyk.ui.PlanDetailActivity" />
+        <activity android:name=".wkyk.ui.act.LookPlanActivity" />
+        <activity android:name=".wkyk.ui.act.PlanDetailActivity" />
         <activity android:name=".wkyk.ui.PayRecordListActivity" />
 
 

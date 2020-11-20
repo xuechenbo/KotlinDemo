@@ -2,13 +2,13 @@ package com.monebac.com.wkyk.ui.login
 
 import androidx.lifecycle.Observer
 import com.monebac.com.R
-import com.monebac.com.jetpack.coroutines.CoroutinesTestActivity
 import com.monebac.com.jetpack.jetbase.BaseVmActivity
 import com.monebac.com.ktolingbaic.kotlinbasic.KotlinActivity
 import com.monebac.com.utils.PreferencesUtil
 import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.Constant
 import com.monebac.com.wkyk.ui.act.BankCardListActivity
+import com.monebac.com.wkyk.web.AgentTestActivity
 import com.monebac.com.wkyk.web.AgentWebActivity
 import kotlinx.android.synthetic.main.activity_new_login.*
 import org.jetbrains.anko.startActivity
@@ -53,7 +53,9 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
 //            startActivity<MainJetpackActivity>()
 //            startActivity<NavigationActivity>()
 //            startActivity<ViewModelActivity>()
-            startActivity<CoroutinesTestActivity>()
+//            startActivity<CoroutinesTestActivity>()
+            startActivity<AgentTestActivity>()
+
         }
     }
 

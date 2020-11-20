@@ -9,9 +9,7 @@ import com.monebac.com.jetpack.jetbase.BaseVmActivity
 import com.monebac.com.utils.getMap
 import com.monebac.com.wkyk.adapter.BindCardListAdapter
 import com.monebac.com.wkyk.model.BindCard
-import com.monebac.com.wkyk.ui.LookPlanActivity
 import com.monebac.com.wkyk.ui.PayRecordListActivity
-import com.monebac.com.wkyk.ui.YKchannelActivity
 import com.monebac.com.wkyk.ui.vm.BankCardViewModel
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import kotlinx.android.synthetic.main.act_change_area.*
@@ -75,7 +73,7 @@ class BankCardListActivity : BaseVmActivity<BankCardViewModel>() {
                 when (view.id) {
                     R.id.tv_plan -> {
                         if (data.plancount == 0)
-                            startActivity<YKchannelActivity>("BindCard_Class" to mList[postion])
+                            startActivity<YKchannelActivity>("BindCard_Class" to data)
                         else
                             toast("有计划执行中...")
                     }

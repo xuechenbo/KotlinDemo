@@ -41,8 +41,6 @@ class ShowPlanMsgDialog : DialogFragment() {
         val window = dialog!!.window
         window!!.setGravity(Gravity.CENTER)
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-
-
         view.run {
             tv_hkje.text = previewPlanModel.HkMoney
             tv_hkzq.text = "${previewPlanModel.startTime}至${previewPlanModel.endTime}"
